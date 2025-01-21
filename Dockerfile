@@ -1,23 +1,23 @@
-# Sử dụng
-FROM node:18-alpine
+# Sử dụng image Node.js chính thức
+FROM node:18-alpine 
 
-# Thiết lập
+# Thiết lập thư mục làm việc
 WORKDIR /app
 
-# Copy file
+# Copy file package.json và package-lock.json
 COPY package*.json ./
 
-# Cài đặt
+# Cài đặt dependencies
 RUN npm install
 
-# Copy
+# Copy toàn bộ mã nguồn
 COPY . .
 
-# Build
+# Build ứng dụng Next.js
 RUN npm run build
 
-# Chạy
-CMD ["npm","run","start"]
+# Chạy ứng dụng Next.js
+CMD ["npm", "run", "start"]
 
-# Mở
+# Mở cổng 3000
 EXPOSE 3000

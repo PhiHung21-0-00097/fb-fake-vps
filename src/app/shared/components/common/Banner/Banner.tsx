@@ -1,7 +1,7 @@
+"use client";
 import Image from "next/image";
 import { faceImage } from "../../../../../../public";
-import Link from "next/link";
-
+import { LoginForm } from "../LoginForm";
 export const Banner = () => {
     return (
         <section className=" text-black h-screen">
@@ -11,6 +11,7 @@ export const Banner = () => {
                         <div className="row flex">
                             <div className="w-[580px] pr-[32px]">
                                 <Image
+                                    loading="lazy"
                                     src={faceImage}
                                     alt=""
                                     className="w-[320px] ml-[-28px]"
@@ -23,51 +24,7 @@ export const Banner = () => {
 
                             <div className="text-center w-[396px] h-[456px]">
                                 <div className="text-center bg-[#fff] rounded-[8px] shadow-xl pb-[24px] pt-[10px]">
-                                    <form action="">
-                                        <div className="px-5">
-                                            <div className="py-[6px] px-0 w-full text-[17px]">
-                                                <input
-                                                    type="email"
-                                                    className="border-[1px] border-[#dddfe2] rounded-[6px] py-[14px] px-[16px] w-full"
-                                                    placeholder="Email address or phone number"
-                                                />
-                                            </div>
-                                            {/* ========== */}
-                                            <div className="py-[6px] px-0 zw-full text-[17px]">
-                                                <input
-                                                    type="password"
-                                                    className="border-[1px] border-[#dddfe2] rounded-[6px] py-[14px] px-[16px] w-full "
-                                                    placeholder="Password"
-                                                />
-                                            </div>
-                                        </div>{" "}
-                                        {/* ========== */}
-                                        <div className="px-5">
-                                            <button className="w-full bg-blue border-none rounded-[6px] text-[20px] px-[16px] py-[10px] font-bold text-white">
-                                                Log in
-                                            </button>
-                                        </div>{" "}
-                                        {/* ========== */}
-                                        <div className="flex justify-center mt-[16px]">
-                                            <Link
-                                                href="/"
-                                                className="text-[14px] font-medium text-blue"
-                                            >
-                                                Forgotten password?
-                                            </Link>
-                                        </div>{" "}
-                                        {/* ========== */}
-                                        <div className="flex items-center border-[1px] border-[#dadde1]  my-[20px] mx-[16px]"></div>{" "}
-                                        {/* ========== */}
-                                        <div className="pt-[6px] flex justify-center">
-                                            <Link
-                                                href="/"
-                                                className="text-[17px] rounded-[6px]  py-[12px] px-[16px] text-white bg-green font-bold"
-                                            >
-                                                Create new account
-                                            </Link>
-                                        </div>
-                                    </form>
+                                    <LoginForm />
                                 </div>
                                 <div className="mt-[28px]">
                                     <span className="text-[14px]">
@@ -82,7 +39,7 @@ export const Banner = () => {
             </div>
             <div className="bg-white text-[#737373]">
                 <div className="mt-[20px]">
-                    <div className="w-[980px] my-0 mx-auto  ">
+                    <div className="w-[980px] my-0 mx-auto">
                         <ul
                             className="pt-[8px] items-center flex flex-wrap m-0 p-0 text-[12px]"
                             data-nocookies="1"
