@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
-
-const montserrat = Montserrat({
-    variable: "--font-montserrat", // Biến CSS cho font
-    subsets: ["latin"], // Chỉ tải subset latin
-    display: "swap", // Tăng hiệu suất hiển thị
-});
 
 export const metadata: Metadata = {
     title: "Otis Luxury | [Otis Luxury]",

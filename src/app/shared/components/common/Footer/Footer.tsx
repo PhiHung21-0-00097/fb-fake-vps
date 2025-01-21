@@ -1,5 +1,4 @@
-import { fb, int, it, tw } from "@public/images";
-import Image from "next/image";
+// import { fb, int, it, tw } from "@public/images";
 import Link from "next/link";
 
 const contactInfo = [
@@ -26,7 +25,7 @@ const contacList = [
     { href: "google.com", text: "Góp ý báo lỗi" },
 ];
 
-const socialIcons = [fb, tw, int, it];
+// const socialIcons = [fb, tw, int, it];
 
 export const Footer = () => (
     <footer className="Footer my-20 ">
@@ -81,7 +80,7 @@ export const Footer = () => (
                         KẾT NỐI CHÚNG TÔI
                     </h5>
                     <div className="my-4 flex gap-2">
-                        {socialIcons.map((icon, index) => (
+                        {/* {socialIcons.map((icon, index) => (
                             <Image
                                 key={index}
                                 loading="lazy"
@@ -90,7 +89,7 @@ export const Footer = () => (
                                 role="button"
                                 alt=""
                             />
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>
