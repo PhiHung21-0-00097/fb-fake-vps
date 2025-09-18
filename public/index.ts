@@ -1,3 +1,3 @@
 import faceImage from "./4lCu2zih0ca.svg";
-
-export { faceImage };
+import user from "./user.png";
+export { faceImage, user };

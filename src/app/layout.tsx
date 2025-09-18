@@ -5,6 +5,9 @@ import { Toaster } from "sonner";
 export const metadata: Metadata = {
   title: "Otis Luxury | [Otis Luxury]",
   description: "otis nguyễn",
+  icons: {
+    icon: "/favicon.ico",
+  },
   authors: [
     { name: "Otis Nguyễn", url: "https://www.nguyenhoangphihung.id.vn/" },
   ],
@@ -40,8 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-white`}>{children}</body>
-      <Toaster richColors position="top-right" />
+      <body className={`bg-white`}>
+        {children} <Toaster richColors position="top-right" />
+      </body>
     </html>
   );
 }

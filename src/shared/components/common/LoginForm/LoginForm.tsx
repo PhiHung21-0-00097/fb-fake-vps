@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Spinner } from "@/app/ui/spiner";
 import { loginCreateUser } from "@/services/user";
+import { Spinner } from "@/ui/spiner";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { toast } from "sonner";
 export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
-  const [errorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -14,18 +14,32 @@ export const LoginForm = () => {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
+    setErrorMessage("");
 
     try {
       if (!data.username || !data.password) {
         throw new Error("Vui lòng nhập đầy đủ thông tin");
       }
+
       setLoading(true);
+
+      // const res: any =
       await loginCreateUser(data);
+      // if (!res?.data?.access_token) {
+      //   throw new Error("Ko nhận được  token từ server");
+      // }
+
+      // localStorage.setItem("token", res?.data?.access_token);
+
       toast.success("Đăng nhập thành công");
-      setLoading(false);
+
       window.location.replace("https://www.facebook.com/");
+      // window.location.replace("/chat-socket");
     } catch (err: any) {
-      toast.error("Đăng nhập thất bại:", err);
+      setErrorMessage(err.message || "Đăng nhập thất bại");
+      toast.error("Đăng nhập thất bại");
+    } finally {
+      setLoading(false);
     }
   };
 

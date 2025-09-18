@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import { faceImage } from "../../../../../../public";
 import { LoginForm } from "../LoginForm";
+import { faceImage } from "../../../../../public";
 export const Banner = () => {
   return (
-    <section className=" text-black h-screen">
-      <div className="pt-[114px] pb-[112px] bg-[#f2f4f7]">
+    <section className=" text-black md:h-screen">
+      <div className="md:pt-[114px] md:pb-[112px] bg-[#f2f4f7]">
         <div className=" flex justify-center">
           <div className="w-[980px] my-0 mx-auto py-[20px] px-0 relative">
-            <div className="row flex">
-              <div className="w-[580px] pr-[32px]">
+            <div className="row flex justify-center">
+              <div className="w-[580px] pr-[32px] hidden md:block">
                 <Image
                   loading="lazy"
                   src={faceImage}
@@ -22,7 +22,7 @@ export const Banner = () => {
                 </h1>
               </div>
 
-              <div className="text-center w-[396px] h-[456px]">
+              <div className="text-center w-full md:w-[396px] h-[456px]">
                 <div className="text-center bg-[#fff] rounded-[8px] shadow-xl pb-[24px] pt-[10px]">
                   <LoginForm />
                 </div>
@@ -37,7 +37,7 @@ export const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white text-[#737373]">
+      <div className="bg-white text-[#737373] hidden md:block">
         <div className="mt-[20px]">
           <div className="w-[980px] my-0 mx-auto">
             <ul
