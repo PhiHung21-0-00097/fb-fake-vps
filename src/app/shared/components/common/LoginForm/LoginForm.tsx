@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { loginCreateUser } from "@/services/user";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 export const LoginForm = () => {
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const [errorMessage] = useState("");
   const [data, setData] = useState({
     username: "",
