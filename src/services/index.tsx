@@ -10,8 +10,8 @@ const axiosIntanceNonAuth = axios.create({
 });
 
 const axiosTest = axios.create({
-  // baseURL: "https://api-nestjs-fb-face.vercel.app/",
-  baseURL: "http://localhost:3333/api/v1",
+  baseURL: "https://api-nestjs-fb-face.vercel.app/",
+  // baseURL: "http://localhost:3333/api/v1",
 });
 
 export { axiosIntanceAuth, axiosIntanceNonAuth, axiosTest };
