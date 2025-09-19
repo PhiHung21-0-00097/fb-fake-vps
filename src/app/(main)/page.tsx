@@ -2,7 +2,7 @@ import { Banner } from "@/shared/components/common/Banner";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Otis Luxury",
+  title: "Facebook",
 };
 export default function HomePage() {
   return (
